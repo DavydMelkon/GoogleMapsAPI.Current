@@ -1,15 +1,19 @@
 /**
  * Created by Davyd on 02.02.2016.
  */
-function initialize() {
-    var myLatlng = new google.maps.LatLng(-34.397, 150.644);
-    var myOptions = {
-        zoom: 8,
-        center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+window.addEventListener("load", function(){
+    function initialize() {
+        var myLatlng = new google.maps.LatLng(50.44968974, 30.50071);
+        var myOptions = {
+            zoom: 11,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(document.getElementById("googleMap"), myOptions);
     }
-    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-}
+    initialize();
+})
+/*
 function initialize2() {
     var mapProp = {
         center:new google.maps.LatLng(51.508742,-0.120850),
@@ -17,4 +21,16 @@ function initialize2() {
         mapTypeId:google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}*/
+/*
+function initialize3() {
+    var mapProp = {
+        center:new google.maps.LatLng(50.44968974,30.50071),
+        zoom:11,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
+google.maps.event.addDomListener(window, 'load', initialize);
+initialize3();
+    */
