@@ -15,6 +15,10 @@ body {
     font-family: 'Viva';
     src: url(/fonts/viva.TTF);
 }
+@font-face {
+    font-family: 'Avalon Medium';
+    src: url(/fonts/Avalon.ttf);
+}
 /* ------------ */
 /* -- Header -- */
 /* ------------ */
@@ -64,3 +68,8 @@ body {
     text-align: center;
 }
 #map h2 {font-family: "SketchFlow Print", Georgia, serif;}
+#contact-form {
+    padding: 50px 0 0 0;
+    text-align: center;
+    font-family: "SketchFlow Print";
+}
