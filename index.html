@@ -6,9 +6,13 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/contact-form.css" />
+    <link rel="stylesheet" href="css/ContextMenu.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/jquery-2.2.1.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/ContextMenu.js"></script>
+    <script src="js/style.js"></script>
     <!--<script>
         function initialize() {
             var mapProp = {
@@ -34,9 +38,9 @@
     <div id="nav">
         <ul id="nav-pages">
             <li><a href="index.html" class="current">Home</a><span>~</span></li>
-            <li><a href="#">About project</a><span>~</span></li>
-            <li><a href="#">Map</a><span>~</span></li>
-            <li><a href="#">Feedback</a><span></span></li>
+            <li><a href="#ex1">About project</a><span>~</span></li>
+            <li><a href="#ex2">Map</a><span>~</span></li>
+            <li><a href="#ex3">Feedback</a><span></span></li>
             <!--<li><a href="#">Contact Me</a></li>-->
         </ul><!--end nav-pages-->
     </div> <!--end nav-->
@@ -48,49 +52,57 @@
 </div>
 
 <!--About Us block-->
-
-<div id="aboutUs">
-    <img src="images/border.png">
-    <div class="textAboutUs">
-        <h2>About project</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<section id="ex1">
+    <div id="aboutUs">
+        <img src="images/border.png">
+        <div class="textAboutUs">
+            <h2>About project</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
     </div>
-</div>
+</section>
+
 
 <!--Map block-->
-<div id="map">
-    <img src="images/border.png">
-    <h2>Map</h2>
-    <div id="googleMap" style="width:1024px; height:450px;  margin: 2em auto; padding: 1em; box-shadow: 0 0 20px 15px rgba(221, 221, 221, 1);"></div>
-</div>
+<section id="ex2">
+    <div id="map">
+        <img src="images/border.png">
+        <h2>Map</h2>
+        <div id="googleMap" style="width:1024px; height:450px;  margin: 2em auto; padding: 1em; box-shadow: 0 0 20px 15px rgba(221, 221, 221, 1);"></div>
+    </div>
+</section>
 
-<div id="contact-form">
-    <img src="images/border.png">
-    <h2>Contact Form</h2>
+<!--Contact form block-->
+<section id="ex3">
+    <div id="contact-form">
+        <img src="images/border.png">
+        <h2>Feedback</h2>
 
-    <form class="form" name="MyForm" action="http://gmapsapi.esy.es/mail.php" method="post">
+        <form class="form" name="MyForm" action="http://gmapsapi.esy.es/mail.php" method="post">
 
-        <p class="name">
-            <input type="text" name="name" id="name" placeholder="John Smith" />
-        </p>
+            <p class="name">
+                <input type="text" name="name" id="name" placeholder="John Smith" />
+            </p>
 
-        <p class="email">
-            <input type="text" name="email" id="email" placeholder="mail@example.com" />
-        </p>
+            <p class="email">
+                <input type="text" name="email" id="email" placeholder="mail@example.com" />
+            </p>
 
-        <!--<p class="web">
-            <input type="text" name="web" id="web" placeholder="www.example.com" />
-        </p>-->
+            <!--<p class="web">
+                <input type="text" name="web" id="web" placeholder="www.example.com" />
+            </p>-->
 
-        <p class="text">
-            <textarea name="text" placeholder="Write something to us" /></textarea>
-        </p>
+            <p class="text">
+                <textarea name="text" placeholder="Write something to us" /></textarea>
+            </p>
 
-        <p class="submit">
-            <input type="submit" value="Send" />
-        </p>
-    </form>
-</div>
+            <p class="submit">
+                <input type="submit" value="Send" />
+            </p>
+        </form>
+    </div>
+</section>
+
 
 <!--<div id="googleMap" style="width:1024px; height:380px;  border-radius: 5px; border: 1px solid rgba(0, 0, 0, 0.2);  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);"></div>-->
 </body>
