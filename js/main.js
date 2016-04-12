@@ -59,11 +59,15 @@ window.addEventListener("load", function(){
         markerOptions.title='Directions destination';
         var destinationMarker=new google.maps.Marker(markerOptions);
 
+
+        var diagForm = document.getElementById('dialog-form');
+
         //	listen for the ContextMenu 'menu_item_selected' event
         google.maps.event.addListener(contextMenu, 'menu_item_selected', function(latLng, eventName){
             switch(eventName){
                 case 'add_marker_click':
                     //HERE WILL BE MANIPULATION WITH ADDING A MARKER
+                    diagForm.classList.add('open');
                     break;
                 case 'directions_origin_click':
                     originMarker.setPosition(latLng);
