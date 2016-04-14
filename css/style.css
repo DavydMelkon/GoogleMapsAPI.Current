@@ -73,10 +73,3 @@ body {
     text-align: center;
     font-family: "SketchFlow Print";
 }
-.dialogForm {
-    display: none;
-}
-
-.open {
-    display: block;
-}

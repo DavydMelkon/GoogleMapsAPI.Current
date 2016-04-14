@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/contact-form.css" />
+    <link rel="stylesheet" href="css/marker-form.css" />
     <link rel="stylesheet" href="css/ContextMenu.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <script src="http://maps.googleapis.com/maps/api/js"></script>
@@ -73,7 +74,7 @@
 </section>
 
 <!--Markers form-->
-<div id="dialog-form" class="dialogForm" title="Create new marker">
+<!--<div id="dialog-form" class="dialogForm" title="Create new marker">
     <p class="validateTips">All form fields are required.</p>
 
     <form>
@@ -85,9 +86,24 @@
             <label for="password">Password</label>
             <input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
 
-            <!-- Allow form submission with keyboard without duplicating the dialog button-->
+
             <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
         </fieldset>
+    </form>
+</div>-->
+<div id="dialog-form" class="dialogForm">
+    <div class="title">Create your marker</div>
+    <form name="markerForm" method="post">
+        <input type="text" name="marker_name" onfocus="this.select()" onblur="this.value=!this.value?'* Marker Name':this.value;" placeholder="* Marker Name" class="marker-name" id="markerName"/><br>
+        <textarea class="description" id="description" placeholder="* Your description"></textarea><br>
+        <select required name = "name[]" class="selection-box" id="selctionBox">
+            <option selected disabled>Choose type of marker</option>
+            <option value="bar">Bar</option>
+            <option value="cafe">Cafe</option>
+            <option value="cinema">Cinema</option>
+            <option value="restaurant">Restaurant</option>
+        </select><br>
+        <input type="submit" name="create" value="Create a marker" class="create-marker" id="createMarkerBtn">
     </form>
 </div>
 

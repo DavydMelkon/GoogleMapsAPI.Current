@@ -62,12 +62,43 @@ window.addEventListener("load", function(){
 
         var diagForm = document.getElementById('dialog-form');
 
+        //THIS MIGHT BE IN LISTENER!!!
+        /*
+        var markerName = document.getElementById('markerName').value;
+        var markerDescription = document.getElementById('description').value;
+        var selectedMarker = document.getElementById('selectionBox').value;
+        */
         //	listen for the ContextMenu 'menu_item_selected' event
         google.maps.event.addListener(contextMenu, 'menu_item_selected', function(latLng, eventName){
             switch(eventName){
                 case 'add_marker_click':
                     //HERE WILL BE MANIPULATION WITH ADDING A MARKER
                     diagForm.classList.add('open');
+                    window.scrollBy(0,300);
+
+                    //*******
+                    /*The part of marker creations! Uncomment after values configure!
+                    1. You may download marker image!
+                    2. Create s listener for button!
+                    3.
+                    */
+                    //*******
+
+                    /*var createdMarkerOption = {};
+                    createdMarkerOption.map = null;
+                    switch (selectedMarker){
+                        case 'bar': createdMarkerOption.icon = ''; break;
+                        case 'cafe': createdMarkerOption.icon = ''; break;
+                        case 'cinema': createdMarkerOption.icon = ''; break;
+                        case 'restaurant': createdMarkerOption.icon = ''; break;
+                    }
+                    createdMarkerOption.title = markerName;
+
+                    var createdMarker = new google.maps.Marker(createdMarkerOption);
+                    createdMarker.setPosition(latLng);
+                    if(!createdMarker.getMap()){
+                        createdMarker.setMap(map);
+                    }*/
                     break;
                 case 'directions_origin_click':
                     originMarker.setPosition(latLng);
