@@ -62,7 +62,7 @@ window.addEventListener("load", function(){
 
 
         var diagForm = document.getElementById('dialog-form');
-
+        var createMarkerBtn = document.getElementById('createMarkerBtn');
         //THIS MIGHT BE IN LISTENER!!!
         /*
         var markerName = document.getElementById('markerName').value;
@@ -77,31 +77,44 @@ window.addEventListener("load", function(){
                     diagForm.classList.add('open');
                     window.scrollBy(0,300);
 
-                    //*******
-                    /*The part of marker creations! Uncomment after values configure!
-                    1. You may download marker image!
-                    2. Create s listener for button!
-                    3.
-                    */
-                    //*******
+                    createMarkerBtn.addEventListener("click", function(e) {
+                        e.preventDefault();
 
-                    /*var createdMarkerOption = {};
-                    createdMarkerOption.map = null;
-                    switch (selectedMarker){
-                        case 'bar': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/bar.png'; break;
-                        case 'cafe': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/cafe.png'; break;
-                        case 'cinema': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/cinema.png'; break;
-                        case 'theater': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/theater.png'; break;
-                        case 'restaurant': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/restaurant.png'; break;
-                        case 'fastfood': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/fastfood.png'; break;
-                    }
-                    createdMarkerOption.title = markerName;
+                        //Add full description of marker (name, about, etc..)
+                        //Close form after adding a marker
 
-                    var createdMarker = new google.maps.Marker(createdMarkerOption);
-                    createdMarker.setPosition(latLng);
-                    if(!createdMarker.getMap()){
-                        createdMarker.setMap(map);
-                    }*/
+                        var markerName = document.getElementById('markerName').value;
+                        var markerDescription = document.getElementById('description').value;
+                        var selectedMarker = document.getElementById('selectionBox').value;
+
+                        var createdMarkerOption = {};
+                        createdMarkerOption.map = null;
+                        switch (selectedMarker){
+                            case 'bar': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/bar.png';
+                                break;
+                            case 'cafe': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/cafe.png';
+                                break;
+                            case 'cinema': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/cinema.png';
+                                break;
+                            case 'theater': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/theater.png';
+                                break;
+                            case 'restaurant': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/restaurant.png';
+                                break;
+                            case 'fastfood': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/fastfood.png';
+                                break;
+                        }
+                        createdMarkerOption.title = markerName;
+
+                        var createdMarker = new google.maps.Marker(createdMarkerOption);
+                        createdMarker.setPosition(latLng);
+                        if(!createdMarker.getMap()){
+                            createdMarker.setMap(map);
+                        }
+
+                        //window.open('http://ukr.net');
+                        return false;
+                    });
+
                     break;
                 case 'directions_origin_click':
                     originMarker.setPosition(latLng);
