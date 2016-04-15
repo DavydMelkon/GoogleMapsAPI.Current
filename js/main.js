@@ -48,14 +48,15 @@ window.addEventListener("load", function(){
         //	create markers to show directions origin and destination
         //	both are not visible by default
         var markerOptions={};
-        markerOptions.icon='http://www.google.com/intl/en_ALL/mapfiles/markerA.png';
+        //markerOptions.icon='http://www.google.com/intl/en_ALL/mapfiles/markerA.png';
+        markerOptions.icon='http://gmapsapi.esy.es/images/markers/markerA.png';
         markerOptions.map=null;
         markerOptions.position=new google.maps.LatLng(0, 0);
         markerOptions.title='Directions origin';
 
         var originMarker=new google.maps.Marker(markerOptions);
 
-        markerOptions.icon='http://www.google.com/intl/en_ALL/mapfiles/markerB.png';
+        markerOptions.icon='http://gmapsapi.esy.es/images/markers/markerB.png';
         markerOptions.title='Directions destination';
         var destinationMarker=new google.maps.Marker(markerOptions);
 
@@ -87,10 +88,12 @@ window.addEventListener("load", function(){
                     /*var createdMarkerOption = {};
                     createdMarkerOption.map = null;
                     switch (selectedMarker){
-                        case 'bar': createdMarkerOption.icon = ''; break;
-                        case 'cafe': createdMarkerOption.icon = ''; break;
-                        case 'cinema': createdMarkerOption.icon = ''; break;
-                        case 'restaurant': createdMarkerOption.icon = ''; break;
+                        case 'bar': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/bar.png'; break;
+                        case 'cafe': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/cafe.png'; break;
+                        case 'cinema': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/cinema.png'; break;
+                        case 'theater': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/theater.png'; break;
+                        case 'restaurant': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/restaurant.png'; break;
+                        case 'fastfood': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/fastfood.png'; break;
                     }
                     createdMarkerOption.title = markerName;
 
