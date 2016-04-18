@@ -6,6 +6,10 @@
     display: block;
 }
 
+.close {
+    display: none;
+}
+
 #dialog-form {
     text-align: center;
 }

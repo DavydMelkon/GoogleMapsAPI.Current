@@ -3,7 +3,7 @@
    =========================== */
 
 input, textarea {
-	font-family: "SketchFlow Print", "Avalon Medium";
+	font-family: "SketchFlow Print", Georgia, serif;
 	padding: 10px;
 	border: 1px solid #E5E5E5;
 	width: 200px;
@@ -54,5 +54,5 @@ input:focus, textarea:focus {
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	font-family: "SketchFlow Print";
+	font-family: "SketchFlow Print",serif;
 }

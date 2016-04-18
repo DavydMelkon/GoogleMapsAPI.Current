@@ -19,6 +19,9 @@ window.addEventListener("load", function(){
         var directionsRenderer=new google.maps.DirectionsRenderer(directionsRendererOptions);
         var directionsService=new google.maps.DirectionsService();
 
+        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(
+            FullScreenControl(map, ['Full screen'], ['Exit full screen']));
+
         var contextMenuOptions={};
         contextMenuOptions.classNames={menu:'context_menu', menuSeparator:'context_menu_separator'};
 
@@ -63,6 +66,7 @@ window.addEventListener("load", function(){
 
         var diagForm = document.getElementById('dialog-form');
         var createMarkerBtn = document.getElementById('createMarkerBtn');
+
         //THIS MIGHT BE IN LISTENER!!!
         /*
         var markerName = document.getElementById('markerName').value;
@@ -81,14 +85,15 @@ window.addEventListener("load", function(){
                         e.preventDefault();
 
                         //Add full description of marker (name, about, etc..)
-                        //Close form after adding a marker
 
                         var markerName = document.getElementById('markerName').value;
                         var markerDescription = document.getElementById('description').value;
                         var selectedMarker = document.getElementById('selectionBox').value;
+                        var newPositionOfMarker = latLng;
 
                         var createdMarkerOption = {};
                         createdMarkerOption.map = null;
+                        createdMarkerOption.position = new google.maps.LatLng(0,0);
                         switch (selectedMarker){
                             case 'bar': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/bar.png';
                                 break;
@@ -105,19 +110,34 @@ window.addEventListener("load", function(){
                         }
                         createdMarkerOption.title = markerName;
 
+                        var infowindow = new google.maps.InfoWindow;
+                        infowindow.content = markerDescription;
+
+                        createdMarkerOption.content = markerDescription;
+
                         var createdMarker = new google.maps.Marker(createdMarkerOption);
-                        createdMarker.setPosition(latLng);
+                        createdMarker.setPosition(newPositionOfMarker);
                         if(!createdMarker.getMap()){
+                            /*if (createdMarker && createdMarker.setPosition) {
+                                createdMarker.setMap(null);
+                            }*/
                             createdMarker.setMap(map);
                         }
+                        //alert(newPositionOfMarker);
+                        console.log(newPositionOfMarker);
+                        newPositionOfMarker = null;
+                        diagForm.classList.remove('open');
+                        window.scrollBy(0,-300);
 
                         //window.open('http://ukr.net');
                         return false;
                     });
 
+                    //
                     break;
                 case 'directions_origin_click':
                     originMarker.setPosition(latLng);
+                    //console.log(latLng);
                     if(!originMarker.getMap()){
                         originMarker.setMap(map);
                     }
@@ -174,6 +194,10 @@ window.addEventListener("load", function(){
                 document.getElementById('getDirectionsItem').style.display='block';
             }
         });
+
+        /*google.maps.event.addListener(createdMarker, 'click', function() {
+            infowindow.open(map,createdMarker);
+        });*/
     }
     initialize();
 })
