@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Style id="cafeIcon">
+    <IconStyle>
+	<scale>1.1</scale>
+        <Icon>
+            <href>http://beta-gmapsapi.esy.es/images/markers/cafe.png</href>
+        </Icon>
+    </IconStyle>
+</Style>
+<Style id="barIcon">
+    <IconStyle>
+	<scale>1.1</scale>
+        <Icon>
+            <href>http://beta-gmapsapi.esy.es/images/markers/bar.png</href>
+        </Icon>
+    </IconStyle>
+</Style>
+<Placemark>
+	<name>Cafe</name>
+	<description>Description for test marker</description>
+	<styleUrl>#cafeIcon</styleUrl>
+	<Point>
+		<coordinates>30.46633243560791,50.44826825956681,0</coordinates>
+	</Point>
+</Placemark>
+<Placemark>
+	<name>Bar</name>
+	<description>Description for test marker 2</description>
+	<styleUrl>#barIcon</styleUrl>
+	<Point>
+		<coordinates>30.485204,50.452461</coordinates>
+	</Point>
+</Placemark>
+</Document>
+</kml>
