@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Style id="cafeIcon">
+    <IconStyle>
+        <Icon>
+            <href>http://beta-gmapsapi.esy.es/images/markers/cafe.png</href>
+        </Icon>
+    </IconStyle>
+</Style>
+<Placemark>
+	<name>Test marker</name>
+	<description>Description for test marker</description>
+	<styleUrl>#cafeIcon</styleUrl>
+	<Point>
+		<coordinates>30.46633243560791,50.44826825956681,0</coordinates>
+	</Point>
+</Placemark>
+</Document>
+</kml>

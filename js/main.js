@@ -2,15 +2,33 @@
  * Created by Davyd on 02.02.2016.
  */
 window.addEventListener("load", function(){
+
+    var kmlsrc = 'http://beta-gmapsapi.esy.es/kml/test.kml';
+
     function initialize() {
         var myLatlng = new google.maps.LatLng(50.44968974, 30.50071);
         var myOptions = {
             zoom: 11,
             center: myLatlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
+        };
         var map = new google.maps.Map(document.getElementById("googleMap"), myOptions);
 
+        //KML
+        loadKmlLayer(map);
+
+        /*xml = new KmlMapParser({ map: map,
+            //zoom: 14,
+            kml: 'kml/test.kml',
+            showSidebar: false,
+            showFolders: false,
+            showSidebarDescriptions: false,
+            showSidebarBubble: false,
+            showRootName: false,
+            showImageShadow: false
+        });*/
+
+        //Navigation
         var directionsRendererOptions={};
         directionsRendererOptions.draggable=false;
         directionsRendererOptions.hideRouteList=true;
@@ -19,9 +37,67 @@ window.addEventListener("load", function(){
         var directionsRenderer=new google.maps.DirectionsRenderer(directionsRendererOptions);
         var directionsService=new google.maps.DirectionsService();
 
-        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(
-            FullScreenControl(map, ['Full screen'], ['Exit full screen']));
+        //Adding a fullscreen button
+        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(FullScreenControl(map, ['Full screen'], ['Exit full screen']));
 
+        //Adding a searchbox
+        // Create the search box and link it to the UI element.
+        /*var input2 = document.getElementById("pac-input");
+        var searchBox = new google.maps.places.SearchBox(input2);
+         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input2);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+            searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+            var places = searchBox.getPlaces();
+
+            if (places.length == 0) {
+                return;
+            }
+
+            // Clear out the old markers.
+            markers.forEach(function (marker) {
+                marker.setMap(null);
+            });
+            markers = [];
+
+            // For each place, get the icon, name and location.
+            var bounds = new google.maps.LatLngBounds();
+            places.forEach(function (place) {
+                var icon = {
+                    url: place.icon,
+                    size: new google.maps.Size(71, 71),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(17, 34),
+                    scaledSize: new google.maps.Size(25, 25)
+                };
+
+                // Create a marker for each place.
+                markers.push(new google.maps.Marker({
+                    map: map,
+                    icon: icon,
+                    title: place.name,
+                    position: place.geometry.location
+                }));
+
+                if (place.geometry.viewport) {
+                    // Only geocodes have viewport.
+                    bounds.union(place.geometry.viewport);
+                } else {
+                    bounds.extend(place.geometry.location);
+                }
+            });
+            map.fitBounds(bounds);
+        });*/
+
+
+        //Building a contextmenu
         var contextMenuOptions={};
         contextMenuOptions.classNames={menu:'context_menu', menuSeparator:'context_menu_separator'};
 
@@ -67,12 +143,6 @@ window.addEventListener("load", function(){
         var diagForm = document.getElementById('dialog-form');
         var createMarkerBtn = document.getElementById('createMarkerBtn');
 
-        //THIS MIGHT BE IN LISTENER!!!
-        /*
-        var markerName = document.getElementById('markerName').value;
-        var markerDescription = document.getElementById('description').value;
-        var selectedMarker = document.getElementById('selectionBox').value;
-        */
         //	listen for the ContextMenu 'menu_item_selected' event
         google.maps.event.addListener(contextMenu, 'menu_item_selected', function(latLng, eventName){
             switch(eventName){
@@ -200,4 +270,27 @@ window.addEventListener("load", function(){
         });*/
     }
     initialize();
+    //var kmlsrc = 'http://beta-gmapsapi.esy.es/kml/test.kml';
+
+    function loadKmlLayer(map) {
+        var kmlLayer = new google.maps.KmlLayer({
+            url: 'http://beta-gmapsapi.esy.es/kml/test.kml',
+            suppressInfoWindows: false,
+            preserveViewport: true,
+            map: map
+        });
+        /*kmlLayer.addListener('click', function(kmlEvent) {
+            var infowindow = new google.maps.InfoWindow({
+                content:kmlEvent.futureData.descrition
+            });
+            infowindow.open(map, kmlLayer);
+        });*/
+        /*google.maps.event.addListener(kmlLayer, 'click', function(event) {
+            var content = event.featureData.infoWindowHtml;
+            var testimonial = document.getElementById('capture');
+            testimonial.innerHTML = content;
+        });*/
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
 })
