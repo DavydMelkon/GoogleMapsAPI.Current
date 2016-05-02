@@ -156,8 +156,6 @@ window.addEventListener("load", function(){
                     createMarkerBtn.addEventListener("click", function(e) {
                         e.preventDefault();
 
-                        //Add full description of marker (name, about, etc..)
-
                         var markerName = document.getElementById('markerName').value;
                         var markerDescription = document.getElementById('description').value;
                         var selectedMarker = document.getElementById('selectionBox').value;
@@ -176,6 +174,18 @@ window.addEventListener("load", function(){
                             case 'theater': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/theater.png';
                                 break;
                             case 'restaurant': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/restaurant.png';
+                                break;
+                            case 'carousel': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/carousel.png';
+                                break;
+                            case 'church': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/church.png';
+                                break;
+                            case 'monument': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/monument.png';
+                                break;
+                            case 'museum': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/museum.png';
+                                break;
+                            case 'park': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/park.png';
+                                break;
+                            case 'smoky': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/smoky.png';
                                 break;
                             case 'fastfood': createdMarkerOption.icon = 'http://gmapsapi.esy.es/images/markers/fastfood.png';
                                 break;
@@ -276,8 +286,8 @@ window.addEventListener("load", function(){
 
     function loadKmlLayer(map) {
         var kmlLayer = new google.maps.KmlLayer({
-            //url: 'http://beta-gmapsapi.esy.es/kml/test.kml',
-            url: 'https://drive.google.com/uc?export=download&id=0BzpDYyWwZtNzakptcnY2SEwwMUE',
+            url: 'http://beta-gmapsapi.esy.es/kml/test2.kml',
+            //url: 'https://drive.google.com/uc?export=download&id=0BzpDYyWwZtNzakptcnY2SEwwMUE',
             suppressInfoWindows: false,
             preserveViewport: true,
             map: map

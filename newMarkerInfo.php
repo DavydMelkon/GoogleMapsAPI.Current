@@ -1,9 +1,9 @@
 <meta charset="UTF-8" />
 <?php
-if (isset($_POST['marker_name'])) {$name = $_POST['marker_name']; if ($marker_name == '') {unset($marker_name);}}
-if (isset($_POST['description'])) {$email = $_POST['description']; if ($description == '') {unset($description);}}
-if (isset($_POST['selectionName'])) {$text = $_POST['selectionName']; if ($selectionName == '') {unset($selectionName);}}
-if (isset($_POST['coordinates'])) {$text = $_POST['coordinates']; if ($coordinates == '') {unset($coordinates);}}
+if (isset($_POST['marker_name'])) {$name = $_POST['marker_name']; if ($marker_name == '') {unset($marker_name); echo "1";}}
+if (isset($_POST['description'])) {$email = $_POST['description']; if ($description == '') {unset($description); echo "2";}}
+if (isset($_POST['selectionName'])) {$text = $_POST['selectionName']; if ($selectionName == '') {unset($selectionName); echo "3";}}
+if (isset($_POST['coordinates'])) {$text = $_POST['coordinates']; if ($coordinates == '') {unset($coordinates); echo "4";}}
 
 if (isset($marker_name) && isset($description) && isset($selectionName) && isset($coordinates)){
 

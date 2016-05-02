@@ -103,9 +103,9 @@
 <div id="dialog-form" class="dialogForm">
     <div class="title">Create your marker</div>
     <form name="markerForm" method="post">
-        <input type="text" name="marker_name" onfocus="this.select()" onblur="this.value=!this.value?'* Marker Name':this.value;" placeholder="* Marker Name" class="marker-name" id="markerName"/><br>
-        <textarea class="description" name="description" id="description" placeholder="* Your description"></textarea><br>
-        <select required name = "selectionName" class="selection-box" id="selectionBox">
+        <p><input type="text" name="marker_name" onfocus="this.select()" onblur="this.value=!this.value?'* Marker Name':this.value;" placeholder="* Marker Name" class="marker-name" id="markerName" required/><br></p>
+        <p><textarea class="description" name="description" id="description" placeholder="* Your description"></textarea><br></p>
+        <select size="5" required name = "selectionName" class="selection-box" id="selectionBox">
             <option selected disabled>Choose type of marker</option>
             <option value="bar" name="#barIcon">Bar</option>
             <option value="cafe" name="#cafeIcon">Cafe</option>
@@ -113,8 +113,14 @@
             <option value="theater" name="#theaterIcon">Theater</option>
             <option value="restaurant" name="#restaurantIcon">Restaurant</option>
             <option value="fastfood" name="#fastfoodIcon">Fastfood</option>
+            <option value="carousel" name="#carouselIcon">Entertainment park</option>
+            <option value="church" name="#churchIcon">Church</option>
+            <option value="monument" name="#monumentIcon">Monument</option>
+            <option value="museum" name="#museumIcon">Museum</option>
+            <option value="park" name="#parkIcon">Park</option>
+            <option value="smoky" name="#smokyIcon">Hookah</option>
         </select><br>
-        <input type="text" name="coordinates" id="coordinatesFromJS" value="" disabled /><br>
+        <p><input type="text" name="coordinates" id="coordinatesFromJS" value=" " disabled /><br></p>
         <input type="submit" name="create" value="Create a marker" class="create-marker" id="createMarkerBtn" >
     </form>
 </div>
@@ -128,11 +134,11 @@
         <form class="form" name="MyForm" action="http://gmapsapi.esy.es/mail.php" method="post">
 
             <p class="name">
-                <input type="text" name="name" id="name" placeholder="John Smith" />
+                <input type="text" name="name" id="name" placeholder="John Smith" required/>
             </p>
 
             <p class="email">
-                <input type="text" name="email" id="email" placeholder="mail@example.com" />
+                <input type="text" name="email" id="email" placeholder="mail@example.com" required/>
             </p>
 
             <!--<p class="web">
@@ -140,7 +146,7 @@
             </p>-->
 
             <p class="text">
-                <textarea name="text" placeholder="Write something to us" /></textarea>
+                <textarea name="text" placeholder="Write something to us" required/></textarea>
             </p>
 
             <p class="submit">

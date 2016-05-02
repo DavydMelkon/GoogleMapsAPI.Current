@@ -19,11 +19,11 @@
 }
 
 .marker-name {
-    margin: 25px 0 25px 0;
+    /*margin: 25px 0 25px 0;*/
 }
 
 .description {
-    margin: 0 0 25px 0;
+    /*margin: 0 0 25px 0;*/
 }
 
 .selection-box {
@@ -40,7 +40,7 @@
     color: #555;
     font-family: "SketchFlow Print", Georgia, serif;
     font-size: 15px;
-    margin: 0 0 25px 0;
+    /*margin: 0 0 25px 0;*/
     overflow: hidden;
     padding: 5px 10px;
     text-overflow: ellipsis;
@@ -50,6 +50,6 @@
 
 #coordinatesFromJS {
     width: 310px;
-    margin: 0 0 25px 0;
+    /*margin: 0 0 25px 0;*/
 }
 
